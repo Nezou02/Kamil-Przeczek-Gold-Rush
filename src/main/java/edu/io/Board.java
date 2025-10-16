@@ -5,7 +5,7 @@ import edu.io.token.Token;
 
 public class Board {
 
-    public int size = 8;
+    private int size = 8;
     public Token[][] grid;
 
     public record Coords(int col, int row){}
@@ -45,7 +45,9 @@ public class Board {
     public Token peekToken(int column, int row) {
             return grid[row][column];
     }
-
+    public int size(){
+        return this.size;
+    }
     private boolean isIndexValid(int column, int row){
         return this.grid.length > row && row >= 0 && this.grid.length > column && column >=0;
     }

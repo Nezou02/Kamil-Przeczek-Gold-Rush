@@ -54,7 +54,7 @@ public class PlayerToken extends Token{
         }
     }
     public Board.Coords pos(){
-        return new Board.Coords(1,2);
+        return new Board.Coords(this.col, this.row);
     }
     public int row(){
         return this.row;
