@@ -9,7 +9,6 @@ public class Board {
     public Token[][] grid;
 
     public record Coords(int col, int row){}
-
     public Board(){
         this.grid = new Token[size][size];
         EmptyToken emptyToken = new EmptyToken();
@@ -23,6 +22,8 @@ public class Board {
     public void placeToken(int column, int row, Token token) {
         if (isIndexValid(column, row)){
                 this.grid[row][column] = token;
+                token.row(row);
+                token.col(column);
             }
 
     }
