@@ -8,6 +8,8 @@ public class Board {
     public int size = 8;
     public Token[][] grid;
 
+    public record Coords(int col, int row){}
+
     public Board(){
         this.grid = new Token[size][size];
         EmptyToken emptyToken = new EmptyToken();
@@ -18,7 +20,6 @@ public class Board {
             }
         }
     }
-
     public void placeToken(int column, int row, Token token) {
         if (isIndexValid(column, row)){
                 this.grid[row][column] = token;
@@ -32,7 +33,6 @@ public class Board {
             }
         }
     }
-
     public void clean(){
         EmptyToken emptyToken = new EmptyToken();
 
@@ -42,8 +42,7 @@ public class Board {
             }
         }
     }
-    //TODO FINAL PRIVATE TOKEN / on chce gettery bez get sama nazwa
-    public Token peekToken(int column, int row){
+    public Token peekToken(int column, int row) {
             return grid[row][column];
     }
 
