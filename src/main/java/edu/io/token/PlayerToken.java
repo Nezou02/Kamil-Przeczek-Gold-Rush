@@ -15,8 +15,28 @@ public class PlayerToken extends Token{
     }
 
     public void move(Move dir){
-
-
+        try{
+            int dirNumber = dir.ordinal();
+            switch (dirNumber){
+                case 0:
+                    System.out.println("The movement did not take place");
+                    break;
+                case 1:
+                    board.grid[row][col-1] = this;
+                    break;
+                case 2:
+                    board.grid[row][col+1] = this;
+                    break;
+                case 3:
+                    board.grid[row-1][col] = this;
+                    break;
+                case 4:
+                    board.grid[row+1][col] = this;
+                    break;
+            }
+        }catch (IllegalArgumentException e){
+            System.out.println("Cannot move outside the board");
+        }
     }
 
     public enum Move{

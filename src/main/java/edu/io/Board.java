@@ -1,5 +1,6 @@
 package edu.io;
 
+import edu.io.token.EmptyToken;
 import edu.io.token.Token;
 
 public class Board {
@@ -9,9 +10,11 @@ public class Board {
 
     public Board(){
         this.grid = new Token[size][size];
+        EmptyToken emptyToken = new EmptyToken();
+
         for(int i = 0; i < grid.length; i++){
             for (int x = 0; x < grid[0].length; x++){
-                this.grid[i][x] = new Token("・");
+                this.grid[i][x] = emptyToken;
             }
         }
     }
@@ -31,9 +34,11 @@ public class Board {
     }
 
     public void clean(){
+        EmptyToken emptyToken = new EmptyToken();
+
         for(int i = 0; i < grid.length; i++){
             for(int x = 0; x < grid[0].length; x++){
-                this.grid[i][x].label = "・";
+                this.grid[i][x] = emptyToken;
             }
         }
     }
