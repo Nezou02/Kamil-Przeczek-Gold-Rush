@@ -1,5 +1,7 @@
 package edu.io;
 
+import edu.io.token.Token;
+
 public class Board {
 
     public int size = 8;
@@ -35,8 +37,8 @@ public class Board {
             }
         }
     }
-
-    public Token square(int column, int row){
+    //TODO FINAL PRIVATE TOKEN / on chce gettery bez get sama nazwa
+    public Token peekToken(int column, int row){
             return grid[row][column];
     }
 
