@@ -13,9 +13,9 @@ public class Board {
         this.grid = new Token[size][size];
         EmptyToken emptyToken = new EmptyToken();
 
-        for(int i = 0; i < grid.length; i++){
-            for (int x = 0; x < grid[0].length; x++){
-                this.grid[i][x] = emptyToken;
+        for(int row = 0; row < grid.length; row++){
+            for (int column = 0; column < grid[0].length; column++){
+                this.grid[row][column] = emptyToken;
             }
         }
     }
@@ -28,18 +28,18 @@ public class Board {
 
     }
     public void display(){
-        for(int i = 0; i < grid.length; i++){
-            for (int x = 0; x < grid[0].length; x++){
-                System.out.print(grid[i][x]);
+        for(int row = 0; row < grid.length; row++){
+            for (int column = 0; column < grid[0].length; column++){
+                System.out.print(grid[row][column]);
             }
         }
     }
     public void clean(){
         EmptyToken emptyToken = new EmptyToken();
 
-        for(int i = 0; i < grid.length; i++){
-            for(int x = 0; x < grid[0].length; x++){
-                this.grid[i][x] = emptyToken;
+        for(int row = 0; row < grid.length; row++){
+            for(int column = 0; column < grid[0].length; column++){
+                this.grid[row][column] = emptyToken;
             }
         }
     }
