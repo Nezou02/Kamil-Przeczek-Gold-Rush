@@ -4,6 +4,7 @@ public abstract class Token {
     private final String label;
     protected int col;
     protected int row;
+    
     public Token(String label) {
         this.label = label;
     }

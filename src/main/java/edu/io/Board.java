@@ -1,5 +1,4 @@
 package edu.io;
-
 import edu.io.token.EmptyToken;
 import edu.io.token.Token;
 
@@ -50,6 +49,6 @@ public class Board {
         return this.size;
     }
     private boolean isIndexValid(int column, int row){
-        return this.grid.length > row && row >= 0 && this.grid.length > column && column >=0;
+        return this.grid.length > row && row >= 0 && this.grid[0].length > column && column >=0;
     }
 }
