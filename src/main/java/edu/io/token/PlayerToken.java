@@ -33,6 +33,11 @@ public class PlayerToken extends Token{
         }
         if(newRow >= 0 && newRow < board.grid.length && newColumn >= 0 && newColumn < board.grid[0].length){
             board.grid[row][col] = new EmptyToken();
+            var token = board.peekToken(newColumn, newRow);
+            if(token instanceof GoldToken gold){
+                System.out.println("GOLD!");
+
+            }
             board.grid[newRow][newColumn] = this;
             col = newColumn;
             row = newRow;
