@@ -8,28 +8,29 @@ public class Main {
         Scanner input = new Scanner(System.in);
         boolean flag = true;
         Board board = new Board();
-        PlayerToken player1 = new PlayerToken(board);
+        Player player = new Player();
+        PlayerToken playerToken = new PlayerToken(player, board);
 
         while(flag){
             System.out.println("Which direction do you want to move? (up, down, left, right or none)");
             switch((input.nextLine()).toUpperCase()){
                 case "DOWN":
-                    player1.move(PlayerToken.Move.DOWN);
+                    playerToken.move(PlayerToken.Move.DOWN);
                     break;
                 case "UP":
-                    player1.move(PlayerToken.Move.UP);
+                    playerToken.move(PlayerToken.Move.UP);
                     break;
                 case "RIGHT":
-                    player1.move(PlayerToken.Move.RIGHT);
+                    playerToken.move(PlayerToken.Move.RIGHT);
                     break;
                 case "LEFT":
-                    player1.move(PlayerToken.Move.LEFT);
+                    playerToken.move(PlayerToken.Move.LEFT);
                     break;
                 case "BREAK":
                     flag = false;
                     break;
                 default:
-                    player1.move(PlayerToken.Move.NONE);
+                    playerToken.move(PlayerToken.Move.NONE);
             }
         }
     }

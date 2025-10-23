@@ -42,6 +42,15 @@ public class Board {
             }
         }
     }
+    public Board.Coords getAvailableSquare(){
+        for(int row = 0; row < grid.length; row++){
+            for(int column = 0; column < grid[0].length; column++){
+                if(grid[row][column] instanceof EmptyToken)
+                    return new Board.Coords(column, row);
+            }
+        }
+        throw new IllegalStateException("The board is full");
+    }
     public Token peekToken(int column, int row) {
             return grid[row][column];
     }

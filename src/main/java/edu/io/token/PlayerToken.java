@@ -4,12 +4,13 @@ import edu.io.Player;
 
 public class PlayerToken extends Token{
     private final Board board;
-    private Player player;
+    private final Player player;
 
-    public PlayerToken(Board board){
+    public PlayerToken(Player player, Board board){
         super(Label.PLAYER_TOKEN_LABEL);
         this.board = board;
         board.grid[0][0] = this;
+        this.player = player;
     }
 
     public void move(Move dir){
@@ -50,19 +51,6 @@ public class PlayerToken extends Token{
     }
     public Board board(){ return this.board; }
     public Player player() { return player;}
-    public void assignPlayer(Player player) {
-        if (this.player == null)
-            this.player = player;
-    }
-    public Board.Coords getAvailableSquare(){
-        for(int row = 0; row < board.grid.length; row++){
-            for(int column = 0; column < board.grid[0].length; column++){
-                if(board.grid[row][column] instanceof EmptyToken)
-                    return new Board.Coords(row, column);
-            }
-        }
-        return null;
-    }
     public enum Move{
         NONE,
         LEFT,
